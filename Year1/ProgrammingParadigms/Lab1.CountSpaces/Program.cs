@@ -2,14 +2,14 @@
 {
     using System;
 
-    class Program
+    internal class Program
     {
         static Program()
         {
             Console.WriteLine("Enter line to count number of spaces.");
         }
 
-        static void Main()
+        private static void Main()
         {
             while (true)
             {
