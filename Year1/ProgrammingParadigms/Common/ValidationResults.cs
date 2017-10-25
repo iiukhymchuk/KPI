@@ -18,4 +18,10 @@ namespace Common
             internal set => this.value = value;
         }
     }
+
+    public class YesNoValidationResult
+    {
+        public bool IsValid => Type == YesNoValidationResultType.Yes || Type == YesNoValidationResultType.No;
+        public YesNoValidationResultType Type { get; internal set; }
+    }
 }

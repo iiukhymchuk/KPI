@@ -3,9 +3,9 @@
     using System;
     using System.Text.RegularExpressions;
 
-    public static class ConsoleInputValidator
+    internal static class ConsoleInputValidator
     {
-        public static IntegerValidationResult IsInteger(this string input, Func<int, bool> rangePredicate)
+        internal static IntegerValidationResult IsInteger(this string input, Func<int, bool> rangePredicate)
         {
             if (string.IsNullOrWhiteSpace(input))
                 return new IntegerValidationResult { Type = IntegerValidationResultType.EmptyInput };
@@ -17,7 +17,7 @@
             if (!isInteger)
                 return new IntegerValidationResult { Type = IntegerValidationResultType.NotInteger };
 
-            if (rangePredicate != null && !rangePredicate(number))
+            if (!rangePredicate(number))
                 return new IntegerValidationResult { Type = IntegerValidationResultType.NotValidRange };
 
             return new IntegerValidationResult
@@ -25,6 +25,21 @@
                 Type = IntegerValidationResultType.ValidInteger,
                 Value = number
             };
+        }
+
+        internal static YesNoValidationResult IsYesNo(this string input)
+        {
+            if (string.IsNullOrWhiteSpace(input))
+                return new YesNoValidationResult { Type = YesNoValidationResultType.ValidationResultInvalid };
+
+            if (input.ToLower() == "y" || input.ToLower() == "yes")
+                return new YesNoValidationResult { Type = YesNoValidationResultType.Yes };
+
+            if (input.ToLower() == "n" || input.ToLower() == "no")
+                return new YesNoValidationResult { Type = YesNoValidationResultType.No };
+
+            return new YesNoValidationResult { Type = YesNoValidationResultType.ValidationResultInvalid };
+
         }
     }
 }

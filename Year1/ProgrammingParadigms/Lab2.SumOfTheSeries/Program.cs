@@ -20,30 +20,12 @@
             double Formula(double mValue, int iValue) => Sqrt(mValue * (1.0 / iValue)) * Sin(mValue * iValue);
             while (true)
             {
-                var k = GetInput("Enter the number k: ", KRangeValidator);
-                var m = GetInput("Enter the number m: ");
+                var k = ConsoleInputProvider.GetIntegerInput("Enter the number k: ", KRangeValidator, GetValidationMessage);
+                var m = ConsoleInputProvider.GetIntegerInput("Enter the number m: ", (val) => true, GetValidationMessage);
                 var result = CalculateSum(i, k, m, Formula);
                 WriteLine($"The result of the sum is {result}");
                 WriteLine("---------------------");
             }
-        }
-
-        private static int GetInput(string displayMessage, Func<int, bool> predicate = null)
-        {
-            IntegerValidationResult validationResult;
-            do
-            {
-                Write(displayMessage);
-                var input = ReadLine();
-                WriteLine();
-                validationResult = input.IsInteger(predicate);
-                if (!validationResult.IsValid)
-                {
-                    var message = GetValidationMessage(validationResult.Type);
-                    WriteLine(message);
-                }
-            } while (!validationResult.IsValid);
-            return validationResult.Value;
         }
 
         private static double CalculateSum(int i, int k, int m, Func<double, int, double> formula)

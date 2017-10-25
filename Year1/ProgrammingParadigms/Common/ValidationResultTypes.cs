@@ -9,4 +9,12 @@
         NotInteger = 4,
         NotValidRange = 5
     }
+
+    public enum YesNoValidationResultType
+    {
+        ValidationResultNotSet = 0,
+        Yes = 1,
+        No = 2,
+        ValidationResultInvalid = 3
+    }
 }
