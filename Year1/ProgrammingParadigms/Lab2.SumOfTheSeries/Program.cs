@@ -1,7 +1,7 @@
 ﻿namespace Lab2.SumOfTheSeries
 {
+    using Common;
     using System;
-    using System.Text.RegularExpressions;
 
     using static System.Console;
     using static System.Math;
@@ -24,22 +24,23 @@
                 var m = GetInput("Enter the number m: ");
                 var result = CalculateSum(i, k, m, Formula);
                 WriteLine($"The result of the sum is {result}");
-                WriteLine();
+                WriteLine("---------------------");
             }
         }
 
         private static int GetInput(string displayMessage, Func<int, bool> predicate = null)
         {
-            ValidationResult validationResult;
+            IntegerValidationResult validationResult;
             do
             {
                 Write(displayMessage);
                 var input = ReadLine();
                 WriteLine();
-                validationResult = ValidateInput(input, predicate);
+                validationResult = input.IsInteger(predicate);
                 if (!validationResult.IsValid)
                 {
-                    WriteLine(validationResult.Message);
+                    var message = GetValidationMessage(validationResult.Type);
+                    WriteLine(message);
                 }
             } while (!validationResult.IsValid);
             return validationResult.Value;
@@ -55,41 +56,21 @@
             return sum;
         }
 
-        private static ValidationResult ValidateInput(string input, Func<int, bool> predicate)
+        private static string GetValidationMessage(IntegerValidationResultType validationResultType)
         {
-            if (!Regex.IsMatch(input, @"^[-+]?\d+$"))
-            {
-                return new ValidationResult
-                {
-                    IsValid = false,
-                    Message = "It is not a number!"
-                };
-            }
+            if (validationResultType == IntegerValidationResultType.EmptyInput)
+                return "Please, enter some value!";
 
-            var isInteger = int.TryParse(input, out var number);
-            if (!isInteger)
-            {
-                return new ValidationResult
-                {
-                    IsValid = false,
-                    Message = "The number is too big!"
-                };
-            }
+            if (validationResultType == IntegerValidationResultType.NotNumber)
+                return "It is not a number!";
 
-            if (predicate != null && !predicate(number))
-            {
-                return new ValidationResult
-                {
-                    IsValid = false,
-                    Message = "Number should be in range [1, 30]."
-                };
-            }
+            if (validationResultType == IntegerValidationResultType.NotInteger)
+                return "The number is too big!";
 
-            return new ValidationResult
-            {
-                IsValid = true,
-                Value = number
-            };
+            if (validationResultType == IntegerValidationResultType.NotValidRange)
+                return "Number should be in range [1, 30].";
+
+            throw new ArgumentOutOfRangeException(nameof(validationResultType));
         }
     }
 }
