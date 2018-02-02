@@ -13,9 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab1.Trigonometry", "Year1\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab2.SumOfTheSeries", "Year1\ProgrammingParadigms\Lab2.SumOfTheSeries\Lab2.SumOfTheSeries.csproj", "{B8B69807-91AA-43FE-AAFE-83D8AA5308DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab3.Factorial", "Year1\ProgrammingParadigms\Lab3.Factorial\Lab3.Factorial.csproj", "{B7395E5E-D827-4B30-AA53-201765A6F9D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab3.Factorial", "Year1\ProgrammingParadigms\Lab3.Factorial\Lab3.Factorial.csproj", "{B7395E5E-D827-4B30-AA53-201765A6F9D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Year1\ProgrammingParadigms\Common\Common.csproj", "{77838635-06C8-4CB3-B556-D5C2B0549862}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Year1\ProgrammingParadigms\Common\Common.csproj", "{77838635-06C8-4CB3-B556-D5C2B0549862}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab4.LoadFile", "Year1\ProgrammingParadigms\Lab4.LoadFile\Lab4.LoadFile.csproj", "{674DC747-B9B3-4859-B458-C40969CCD038}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +45,10 @@ Global
 		{77838635-06C8-4CB3-B556-D5C2B0549862}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77838635-06C8-4CB3-B556-D5C2B0549862}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77838635-06C8-4CB3-B556-D5C2B0549862}.Release|Any CPU.Build.0 = Release|Any CPU
+		{674DC747-B9B3-4859-B458-C40969CCD038}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{674DC747-B9B3-4859-B458-C40969CCD038}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{674DC747-B9B3-4859-B458-C40969CCD038}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{674DC747-B9B3-4859-B458-C40969CCD038}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -54,6 +60,7 @@ Global
 		{B8B69807-91AA-43FE-AAFE-83D8AA5308DF} = {14131B86-5648-4E84-AE26-0E10D08F386C}
 		{B7395E5E-D827-4B30-AA53-201765A6F9D8} = {14131B86-5648-4E84-AE26-0E10D08F386C}
 		{77838635-06C8-4CB3-B556-D5C2B0549862} = {14131B86-5648-4E84-AE26-0E10D08F386C}
+		{674DC747-B9B3-4859-B458-C40969CCD038} = {14131B86-5648-4E84-AE26-0E10D08F386C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EF108DCA-83D9-42AD-B5C0-69D7E6E4C214}
