@@ -1,4 +1,8 @@
-﻿namespace Lab1.CountSpaces
+﻿/*
+ * Выполните подсчет пробелов во введенной пользователем строке
+ */
+
+namespace Lab1.CountSpaces
 {
     using System;
 

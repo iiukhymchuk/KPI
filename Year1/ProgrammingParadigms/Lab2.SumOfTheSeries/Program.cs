@@ -1,4 +1,8 @@
-﻿namespace Lab2.SumOfTheSeries
+﻿/*
+ * Вычислить сумму ряда: sqrt(m * (1 / i)) * sin(m * i) for k <= 30
+ */
+
+namespace Lab2.SumOfTheSeries
 {
     using Common;
     using System;
